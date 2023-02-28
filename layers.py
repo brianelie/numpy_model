@@ -408,7 +408,6 @@ class Softmax(Layer):
         e = np.exp(x - np.max(x, axis=1, keepdims=True))
         probs = e / np.sum(e, axis=1, keepdims=True)
         if training:
-            # self.x = x
             self.probs = probs
         return probs
 
